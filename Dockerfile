@@ -20,5 +20,5 @@ ADD music/lazysong.mp3 /music
 
 COPY rygel.conf /root/.config/
 EXPOSE 8000/tcp 1900/udp
-#VOLUME ["${RYGEL_CACHE_DIR}", "${RYGEL_VIDEOS_DIR}", "${RYGEL_MUSIC_DIR}", "${RYGEL_PICTURES_DIR}"]
+VOLUME ["${RYGEL_CACHE_DIR}", "${RYGEL_VIDEOS_DIR}", "${RYGEL_MUSIC_DIR}", "${RYGEL_PICTURES_DIR}"]
 CMD ["/usr/bin/rygel" ]
