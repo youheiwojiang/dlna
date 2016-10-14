@@ -14,6 +14,10 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv B84401E3 \
       gstreamer1.0-plugins-ugly gstreamer1.0-libav \
  && rm -rf /var/lib/apt/lists/*
 
+ADD pic/test1.jpg /pictures
+ADD pic/test2.jpg /pictures
+ADD music/lazysong.mp3 /music
+
 COPY rygel.conf /root/.config/
 EXPOSE 8000/tcp 1900/udp
 VOLUME ["${RYGEL_CACHE_DIR}", "${RYGEL_VIDEOS_DIR}", "${RYGEL_MUSIC_DIR}", "${RYGEL_PICTURES_DIR}"]
