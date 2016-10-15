@@ -8,7 +8,7 @@ ENV RYGEL_CACHE_DIR=/root/.cache/rygel \
 
 RUN apt-get update && apt-get install -y \
 #   <package> \
-    iptables \
+    iptables
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv B84401E3 \
  && echo "deb http://ppa.launchpad.net/yg-jensge/gupnp/ubuntu trusty main" >> /etc/apt/sources.list \
