@@ -13,6 +13,8 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv B84401E3 \
       gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
       gstreamer1.0-plugins-ugly gstreamer1.0-libav \
  && rm -rf /var/lib/apt/lists/*
+ && apt get install -y \
+ 	iptables
 
 
 COPY rygel.conf /root/.config/
@@ -23,5 +25,6 @@ VOLUME ["${RYGEL_CACHE_DIR}", "${RYGEL_VIDEOS_DIR}", "${RYGEL_MUSIC_DIR}", "${RY
 COPY pic/test1.jpg /pictures/test1.jpg
 COPY pic/test2.jpg /pictures/test2.jpg
 COPY music/lazysong.mp3 /music/lazysong.mp3
+COPY chute/run.sh  /usr/local/bin/run.sh
 
-CMD ["/usr/bin/rygel" ]
+CMD ["bash", "usr/local/bin/run.sh" ]
