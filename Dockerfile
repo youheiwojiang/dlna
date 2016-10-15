@@ -20,8 +20,8 @@ EXPOSE 8000/tcp 1900/udp
 VOLUME ["${RYGEL_CACHE_DIR}", "${RYGEL_VIDEOS_DIR}", "${RYGEL_MUSIC_DIR}", "${RYGEL_PICTURES_DIR}"]
 
 
-ADD pic/test1.jpg /pictures
-ADD pic/test2.jpg /pictures
-ADD music/lazysong.mp3 /music
+COPY pic/test1.jpg /pictures/test1.jpg
+COPY pic/test2.jpg /pictures/test2.jpg
+COPY music/lazysong.mp3 /music/lazysong.mp3
 
 CMD ["/usr/bin/rygel" ]
